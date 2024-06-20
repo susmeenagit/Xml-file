@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TVSCHEDULE [
+    <!ELEMENT TVSCHEDULE (channel+)>
+    <!ELEMENT channel (banner, day+)>
+    <!ELEMENT banner(#PCDATA)>
+    <!ELEMENT day(date, (holiday|programslot)+)>
+    <!ELEMENT date(#PCDATA)>
+    <!ELEMENT holiday(#PCDATA)>
+    <!ELEMENT programslot(time, title, discription?)>
+    <!ELEMENT time(#PCDATA)>
+    <!ELEMENT title(#PCDATA)>
+    <!ELEMENT decription(#PCDATA)>
+
+    <!ATTLIST TVSCHEDULE name CDATA #REQUIRED>
+    <!ATTLIST channel chan CDATA #REQUIRED>
+    <!ATTLIST programslot vtr  CDATA #implied>
+    <!ATTLIST title rating CDATA #implied
+        language CDATA #implied>
+]>
+
+<TVSCHEDULE attname="name">
+    <channel attch="chan">
+        <banner>Interesting Episodes</banner>
+        <day>
+            <date>2024/02/23</date>
+            <holiday>sunday and saturday</holiday>
+            <programslot attslot="vtr">
+                <times>8:45pm</times>
+                <title attrat="rating" language="Nepali">RadhaKrishna</title>
+                <description>About the life of RadhaKrishna</description>
+            </programslot>
+        </day>
+    </channel>
+</TVSCHEDULE>
